@@ -1,2 +1,12 @@
-<h1>ToDos#index</h1>
-<p>Find me in app/views/to_dos/index.html.erb</p>
+  
+<h1 class="center jumbotron"> <%= (fa_icon "check-square-o", text: "Stuff Ya Gotta Do... Eventually", right: true)%></h1>
+<p><%= link_to "New To Do", new_to_do_path, class: 'btn btn-primary' %></p>
+<% @to_dos.each do |to_do| %>
+ 
+  <h3><%= to_do.title %> | Category: <%= to_do.category %></h3>
+  <h4>Priority: <%= to_do.priority %> | Done?: <%= to_do.completed ? "Yes" : "Nope" %></h4>
+  
+  <%= link_to 'View To Do', to_do_path(to_do), class: 'btn btn-success' %>
+  <%= link_to 'Edit To Do', edit_to_do_path(to_do), class: 'btn btn-info' %>
+  <%= link_to 'Delete To Do', to_do, method: :delete, class: 'btn btn-danger' %>
+<% end %>

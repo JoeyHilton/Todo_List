@@ -1,2 +1,15 @@
-<h1>ToDos#new</h1>
-<p>Find me in app/views/to_dos/new.html.erb</p>
+<h1 class="center jumbotron">A New To Do</h1>
+<%= bootstrap_form_for @to_do do |f| %>
+   
+  <%= f.text_field :title %>
+
+  <%= f.text_field :category %>
+  
+  <%= f.text_field :priority %>
+
+  <%= f.label :completed, class: "checkbox inline" do %>
+        <%= f.check_box :completed %>
+      <% end %>
+
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
