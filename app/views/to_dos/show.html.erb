@@ -1,5 +1,12 @@
 <h1 class="center jumbotron">To Do's</h1>
-<h2><%= @to_do.title %></h2>
-<h3>Category: <%= @to_do.category %> | Priority: <%= @to_do.priority %></h3>
-<h4>Done?: <%= @to_do.completed %></h4>
-<%= link_to 'Back', to_dos_path, class: 'btn btn-default' %>
+<h3><%= @to_do.title %> | Category: <%= @to_do.category %></h3>
+<h4>Priority: <% if @to_do.priority == 1  %> 
+    Today
+    <% elsif @to_do.priority ==2 %>
+    Tomorrow
+    <% else %>
+    Whenever
+    <% end %>
+
+    | Done?: <%= @to_do.completed ? "Yes" : "Nope" %></h4>
+<%= link_to 'Back', to_dos_path, class: 'btn btn-default btn-sm' %>

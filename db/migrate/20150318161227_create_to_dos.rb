@@ -3,7 +3,7 @@ class CreateToDos < ActiveRecord::Migration
     create_table :to_dos do |t|
       t.string :title
       t.string :category
-      t.string :priority
+      t.integer :priority
       t.boolean :completed
 
       t.timestamps null: false

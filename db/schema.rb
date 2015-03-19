@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150318161227) do
   create_table "to_dos", force: :cascade do |t|
     t.string   "title"
     t.string   "category"
-    t.string   "priority"
+    t.integer  "priority"
     t.boolean  "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -5,7 +5,7 @@
 
   <%= f.text_field :category %>
   
-  <%= f.text_field :priority %>
+  <%= f.select(:priority, options_for_select([['Today', 1], ['Tomorrow',2], ['Whenever',3]])) %>
 
   <%= f.label :completed, class: "checkbox inline" do %>
         <%= f.check_box :completed %>

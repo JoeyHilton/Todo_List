@@ -4,8 +4,8 @@ class ToDosController < ApplicationController
   end
 
   def index
-    @to_dos = ToDo.all
-    @to_dos = @to_dos.order(:completed)
+    # @to_dos = ToDo.all
+    @to_dos = ToDo.order(:completed, :priority)
   end
 
   def new
