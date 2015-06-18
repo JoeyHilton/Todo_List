@@ -10,14 +10,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'ToDoList', root_path, class:"navbar-brand" %>
+      <%= link_to 'DoStuff!', root_path, class:"navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'To Do\'s', root_path %></li>
-        <li><%= link_to 'New To Do', new_to_do_path %></li>
+        <li><%= link_to 'To Do\'s', root_path %></li>
+        <li><%= link_to fa_icon('plus', text: 'New To Do'), new_to_do_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

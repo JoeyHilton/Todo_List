@@ -1,6 +1,6 @@
   
 <h1 class="center jumbotron"> <%= (fa_icon "check-square-o", text: "Stuff Ya Gotta Do... Eventually", right: true)%></h1>
-<p><%= link_to "New To Do", new_to_do_path, class: 'btn btn-primary btn-sm' %></p>
+<p><%= link_to fa_icon('plus', text: "New To Do"), new_to_do_path, class: 'btn btn-primary btn-sm' %></p>
 <% @to_dos.each do |to_do| %>
  
   <h3><%= to_do.title %> | Category: <%= to_do.category %></h3>
@@ -12,9 +12,9 @@
     Whenever
     <% end %>
 
-    | Done?: <%= to_do.completed ? "Yes" : "Nope" %></h4>
+    | Done?: <%= to_do.completed ? (fa_icon 'check-square-o') : (fa_icon 'square-o') %></h4>
   
-  <%= link_to 'View To Do', to_do_path(to_do), class: 'btn btn-success btn-sm' %>
-  <%= link_to 'Edit To Do', edit_to_do_path(to_do), class: 'btn btn-warning btn-sm' %>
-  <%= link_to 'Delete To Do', to_do, method: :delete, class: 'btn btn-danger btn-sm' %>
+  <%= link_to fa_icon('eye', text: 'View To Do'), to_do_path(to_do), class: 'btn btn-success btn-sm' %>
+  <%= link_to fa_icon("pencil", text: "Edit To Do"), edit_to_do_path(to_do), class: 'btn btn-warning btn-sm' %>
+  <%= link_to fa_icon("trash-o", text: 'Delete To Do'), to_do, method: :delete, class: 'btn btn-danger btn-sm' %>
 <% end %>
